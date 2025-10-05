@@ -1,0 +1,39 @@
+{
+  "name": "GuzPay Dev",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "dart-code.dart-code",
+        "dart-code.flutter",
+        "github.copilot",
+        "ms-azuretools.vscode-docker",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "portsAttributes": {
+    "5000": {
+      "label": "Backend API",
+      "onAutoForward": "openPreview"
+    },
+    "8080": {
+      "label": "Flutter Web Preview",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "forwardPorts": [
+    5000,
+    8080
+  ]
+}
